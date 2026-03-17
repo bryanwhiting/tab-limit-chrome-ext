@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tab Limit</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <section class="panel">
+        <p class="eyebrow">Tab Limit</p>
+        <h1>Limit dormant tabs</h1>
+        <p class="copy">
+          When a new tab opens past the limit, the least recently touched tab is closed.
+        </p>
+
+        <form id="limit-form" class="limit-form">
+          <label class="limit-label" for="limit-input">Max open tabs</label>
+          <div class="limit-row">
+            <input
+              id="limit-input"
+              name="limit"
+              type="number"
+              min="1"
+              max="200"
+              step="1"
+              required
+            />
+            <button type="submit">Save</button>
+          </div>
+        </form>
+
+        <p id="status" class="status" aria-live="polite"></p>
+
+        <div class="summary">
+          <span>Open now</span>
+          <strong id="open-count">0</strong>
+        </div>
+
+        <div class="list-header">
+          <span>Recent touch order</span>
+          <span id="tracked-count">0 tabs</span>
+        </div>
+
+        <ol id="tab-list" class="tab-list"></ol>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Limit",
+  "description": "Closes the least recently touched tab when your open tab count exceeds the configured limit.",
+  "version": "0.1.0",
+  "permissions": ["storage", "tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Tab Limit",
+    "default_popup": "popup.html"
+  }
+}
